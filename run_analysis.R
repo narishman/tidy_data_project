@@ -54,4 +54,7 @@ tidy_data<-full_set_mean_std %>%
     group_by(subject_id,activity_name) %>%
     summarise_each(funs(mean), contains("mean_"),contains("std_"))
 #tidy_data[,c(-1,-2)] <- round(tidy_data[,c(-1,-2)], 8)
+colnames(tidy_data)[c(-1,-2)] <- gsub("$", "_grouped_by_subject_and_activity", names(tidy_data[,c(-1,-2)]))
+
+## write out the final tidy dataset.
 write.table(tidy_data,file = "tidy_data.txt",row.names = FALSE)
