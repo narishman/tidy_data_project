@@ -1,5 +1,18 @@
 # CodeBook for the tidy data generated for the course project
+## Transformations performed on the base Samsung dataset variable names
 
++ Replaced all "-" with "_"
++ Removed "()" 
++ Added suffix "_grouped_by_subject_and_activity" for all mean and standard deviation as the tidy data has the mean applied after grouping the data by subject id and activity_name
+
+## Transformations performed on the data
++ Merged the training and the test sets to create one data set.
++ Extracted only the measurements on the mean and standard deviation for each measurement. 
++ Added descriptive activity names to name the activities in the data set
++ Added labels to the data set with descriptive variable names. 
++ Created tidy data set with the average of each variable for each activity and each subject. 
+
+## Final list of column names in the tidy_data
 [1] "subject_id"    
 [2] "activity_name"    
 [3] "tBodyAcc_mean__X_grouped_by_subject_and_activity"    
